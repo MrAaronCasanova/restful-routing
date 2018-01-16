@@ -7,11 +7,15 @@
       <img class="ui centered rounded image" src="<%= blog.image %>" alt="Blog Post Image">
     </div>
     <div class="content">
-      <span><%= blog.created.toDateString(); %></span>
+      <span><strong><%= blog.created.toDateString(); %></strong></span>
     </div>
     <div class="description">
       <p><%- blog.body %></p>
     </div>
+    <a class="ui red basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+    <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+      <button class="ui red basic button">Delete</button>
+    </form>
   </div>
 </div>
 
